@@ -10,6 +10,14 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 
+add_executable(simple_loop_node src/simple_loop_node.cpp)
+ament_target_dependencies(simple_loop_node rclcpp std_msgs)
+
+install (TARGETS
+  simple_loop_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
