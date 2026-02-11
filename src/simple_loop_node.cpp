@@ -23,7 +23,7 @@ private:
 int main(int argc, char ** argv)
 {
   rclcpp::init(argc, argv);
-  auto node = std::make_shared<SimpleLoopNode>();
+  rclcpp::spin(std::make_shared<SimpleLoopNode>());
   rclcpp::shutdown();
   return 0;
 }
